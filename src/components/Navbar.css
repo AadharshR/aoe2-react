@@ -2,3 +2,11 @@
   background-color: rgb(51, 51, 51);
   overflow: hidden;
 }
+.marginate {
+  font-family: "Courier New", Courier, monospace;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: red;
+  color: blue;
+}
