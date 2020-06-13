@@ -18,7 +18,15 @@ import { LinkContainer } from "react-router-bootstrap";
 class SideNavbar extends Component {
   state = {
     civs: [],
-    loading: true
+    loading: true,
+    isOpen: false
+  };
+  handleOpen = () => {
+    this.setState({ isOpen: true });
+  };
+
+  handleClose = () => {
+    this.setState({ isOpen: false });
   };
 
   async componentDidMount() {
@@ -37,34 +45,39 @@ class SideNavbar extends Component {
     return (
       <div>
         {this.state.loading ? <Loader /> : null}
-        <Nav
-          className="col-md-12 d-none d-md-block bg-light sidebar"
-          activeKey="/home"
-          onSelect={selectedKey => alert(`selected ${selectedKey}`)}
-        >
-          {/* <div className={style.marginate}> */}
-          {/* {console.log("HERE", this.state.civs)} */}
-          <Nav pullRight>
-            <Router>
-              <LinkContainer to="/home">
-                <NavItem href="/home" eventKey={1}>
-                  CIVILIZATIONS
-                </NavItem>
-              </LinkContainer>
-            </Router>
+        <Navbar bg="light" expand="lg">
+          <Nav
+            className="col-md-12 d-none d-md-block bg-light sidebar"
+            activeKey="/home"
+            onSelect={selectedKey => alert(`selected ${selectedKey}`)}
+          >
+            <Nav pullRight>
+              <Navbar.Collapse id="basic-navbar-nav">
+                <Router>
+                  <LinkContainer to="/home">
+                    <NavItem href="/home" eventKey={1}>
+                      CIVILIZATIONS
+                    </NavItem>
+                  </LinkContainer>
+                </Router>
+              </Navbar.Collapse>
+            </Nav>
+            <NavDropdown
+              onMouseEnter={this.handleOpen}
+              onMouseLeave={this.handleClose}
+              open={this.state.isOpen}
+              noCaret
+              id="language-switcher-container"
+            >
+              <div className="sidebar-sticky" />
+              {this.state.civs.map(civ => (
+                <NavDropdown.Item id={civ.id} className="card-title">
+                  {civ.string}
+                </NavDropdown.Item>
+              ))}
+            </NavDropdown>
           </Nav>
-
-          <div className="sidebar-sticky" />
-          <Nav.Item>
-            <Nav.Link onClick={e => this.onClick()}>Civilizations</Nav.Link>
-            {this.state.civs.map(civ => (
-              <h5 id={civ.id} className="card-title">
-                {/* {console.log("here", civ)} */}
-                {civ.string}
-              </h5>
-            ))}
-          </Nav.Item>
-        </Nav>
+        </Navbar>
       </div>
     );
   }
