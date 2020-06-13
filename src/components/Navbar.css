@@ -8,5 +8,10 @@
   margin: 0;
   padding: 0;
   background-color: red;
-  color: blue;
+  color: green;
+}
+.card-title {
+  color: white;
+  background-color: black;
+  font-family: "Comic Sans MS";
 }

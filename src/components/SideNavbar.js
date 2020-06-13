@@ -1,8 +1,19 @@
 import React, { Component } from "react";
-import { Nav } from "react-bootstrap";
 import style from "./Navbar.css";
 import Loader from "./Loader";
+import Dropdown from "react-dropdown";
+import {
+  Button,
+  Nav,
+  Navbar,
+  NavDropdown,
+  MenuItem,
+  NavItem
+} from "react-bootstrap";
+import { BrowserRouter as Router } from "react-router-dom";
+import { LinkContainer } from "react-router-bootstrap";
 // const Loader = () => <div>Loading...</div>;
+// import { makeStyles } from "@material-ui/core/styles";
 
 class SideNavbar extends Component {
   state = {
@@ -31,14 +42,21 @@ class SideNavbar extends Component {
           activeKey="/home"
           onSelect={selectedKey => alert(`selected ${selectedKey}`)}
         >
-          <div className={style.marginate}>
-            {" "}
-            {console.log(document.querySelector("style"))}
-          </div>
+          {/* <div className={style.marginate}> */}
+          {/* {console.log("HERE", this.state.civs)} */}
+          <Nav pullRight>
+            <Router>
+              <LinkContainer to="/home">
+                <NavItem href="/home" eventKey={1}>
+                  CIVILIZATIONS
+                </NavItem>
+              </LinkContainer>
+            </Router>
+          </Nav>
+
           <div className="sidebar-sticky" />
           <Nav.Item>
             <Nav.Link onClick={e => this.onClick()}>Civilizations</Nav.Link>
-
             {this.state.civs.map(civ => (
               <h5 id={civ.id} className="card-title">
                 {/* {console.log("here", civ)} */}
