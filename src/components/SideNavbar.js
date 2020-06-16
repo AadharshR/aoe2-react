@@ -55,25 +55,26 @@ class SideNavbar extends Component {
     return (
       <div>
         {this.state.loading ? <Loader /> : null}
-        <Navbar className="side-nav" scrollable={true} bg="light" expand="lg">
+        <Navbar
+          className="side-nav"
+          title="CIVILIZATIONS"
+          scrollable={true}
+          bg="light"
+          expand="lg"
+        >
           <Nav
             className="col-md-12 d-none d-md-block bg-light sidebar"
             activeKey="/home"
             onSelect={selectedKey => alert(`selected ${selectedKey}`)}
           >
-            <NavDropdown title="CIVILIZATIONS">
-              {this.state.civs.map(civ => (
-                <NavDropdown.Item className="side-nav" id={civ.id}>
-                  <Card style={{ width: "18rem" }}>
-                    <ListGroup variant="flush">
-                      <ListGroup.Item> {civ.string}</ListGroup.Item>
-                    </ListGroup>
-                  </Card>
-
-                  <br />
-                </NavDropdown.Item>
-              ))}
-            </NavDropdown>
+            {/* <NavDropdown title="CIVILIZATIONS"> */}
+            <b>CIVILIZATIONS</b>
+            {this.state.civs.map(civ => (
+              <ListGroup className="card-nav">
+                <ListGroup.Item> {civ.string}</ListGroup.Item>
+              </ListGroup>
+            ))}
+            {/* </NavDropdown> */}
           </Nav>
         </Navbar>
       </div>
