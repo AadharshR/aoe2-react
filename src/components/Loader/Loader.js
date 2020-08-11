@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../assets/aoe2.gif";
+import logo from "../../assets/aoe2.gif";
 
 const Loader = () => (
   <div>

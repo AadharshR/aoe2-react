@@ -1,0 +1,18 @@
+  .bg-image{
+    background-image: url("../assets/tk.jpg") ;
+    display: flex;
+    background-size: auto 100%;  
+    min-height: 1000px;
+    min-width: 1000px;
+    background-repeat: no-repeat;
+    
+  }
+
+
+.content {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  color:red;
+  font-family: Merriweather;
+}
