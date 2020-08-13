@@ -22,22 +22,31 @@ const MainPage = () => {
       return (
         <div className="content">
 
+          <div className ="unique-units">
+            UNIQUE UNIT:
+              <img src = {require(`../assets/unique-units/${value.civ}.png`)}/>
+          </div>
+          <br />
           <img src={require(`../assets/civs/CivIcon-${value.civ}.png`)} alt="logo" />
-          <br />CIVILIZATION:{value.civ}
+          {value.civ}
           <br></br>
           IDEAL OPENING: {value.ideal_opening}<br />
-          FEUDAL OPENING :{value.transition} <br />
-          CASTLE AGE TRANSITION: {value.castle_age}
+          <div className ="ages">
+          <img src = {require(`../assets/ages/Feudal.png`)}/>
+          {value.transition} <br />
+          <img src = {require(`../assets/ages/Castle.png`)}/>
+           {value.castle_age}
           <br />
-          IMPERIAL AGE: {value.imperial_age}
+          <img src = {require(`../assets/ages/Imperial.png`)}/>
+         {value.imperial_age}
           <br />
+          </div>
           <div>
 
           </div>
         </div>)
 
-  }})
-  console.log("ans", ans)
+  })
 return (
 
   <div>

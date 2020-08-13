@@ -83,7 +83,11 @@ class SideNavbar extends Component {
             <b >Civilizations</b>
             {this.state.civs.map(civ => (
                   <div className="card-nav">
-                     <Link className = "civ-names" to={"/civs/" +civ.string}>{civ.string}</Link>
+                     <Link className = "civ-names" to={"/civs/" +civ.string}>
+                      <div className = "image-nav">
+                     <img src={require(`../assets/civs/CivIcon-${civ.string}.png`)} alt="logo" />
+                      </div>
+                       {civ.string}</Link>
                   </div>     
             ))}
             </div>

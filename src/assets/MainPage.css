@@ -19,8 +19,23 @@
   width: 50%;
   padding: 10px;
   color:yellow;
-  font-family: Merriweather;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-weight: 500;
+
+}
+.unique-units {
+
+  text-align: right;
+  margin : right;
+  
+}
+.unique-units img {
+    width: 20%;
+    height: auto;
+    float: right;
+}
+.ages img{
+  width: 20%;
 
 }
 html, body {margin: 0; height: 100%; overflow: hidden}

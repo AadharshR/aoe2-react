@@ -10,6 +10,7 @@ class App extends Component {
   render() {
     return (
       <div className ="bg-image">
+         <header className="App-header">
         <Router>
         <Container fluid>
               <Row>
@@ -22,7 +23,7 @@ class App extends Component {
 
             </Container>
         </Router>
-   
+        </header>
         </div>
           
     );

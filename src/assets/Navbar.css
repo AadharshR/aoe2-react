@@ -64,3 +64,8 @@ background-color: black;}
 ::-webkit-scrollbar-thumb:hover {
   background: #555; 
 }
+
+.main-nav img{
+  width: 20%;
+  height: auto;
+}
